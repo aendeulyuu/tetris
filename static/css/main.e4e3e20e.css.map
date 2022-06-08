@@ -1,0 +1,1 @@
+{"version":3,"file":"static/css/main.e4e3e20e.css","mappings":"AAAA,KACE,QACF,CAEA,EACE,+CACF","sources":["index.css"],"sourcesContent":["body {\r\n  margin: 0;\r\n}\r\n\r\n* {\r\n  font-family: 'Orbitron', Arial, Helvetica, sans-serif;\r\n}\r\n"],"names":[],"sourceRoot":""}
