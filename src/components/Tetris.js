@@ -1,9 +1,18 @@
+import {
+  AiOutlineArrowDown,
+  AiOutlineArrowLeft,
+  AiOutlineArrowRight,
+} from 'react-icons/ai';
 import { StyledTetris, StyledTetrisWrapper } from './styles/StyledTetris';
 import { checkCollision, createStage } from '../gameHelpers';
 
+import { BiArrowToBottom } from 'react-icons/bi';
+import Control from './Control';
 import Display from './Display';
+import { FiRotateCcw } from 'react-icons/fi';
 import Stage from './Stage';
 import StartButton from './StartButton';
+import { StyledScoreboard } from './styles/StyledScoreboard';
 import { useGameStatus } from '../hooks/useGameStatus';
 import useInterval from '../hooks/useInterval';
 import { usePlayer } from '../hooks/usePlayer';
@@ -124,14 +133,27 @@ const Tetris = () => {
         <aside>
           {gameOver && <Display gameOver={gameOver} text="Game Over" />}
           {!gameOver && (
-            <div>
+            <StyledScoreboard>
               <Display text={`Score: ${score}`} />
               <Display text={`Rows: ${rows}`} />
               <Display text={`Level: ${level}`} />
-            </div>
+            </StyledScoreboard>
           )}
           <StartButton callback={startGame} />
         </aside>
+        <div>
+          <Control
+            Icon={<AiOutlineArrowLeft onClick={() => movePlayer(-1)} />}
+          />
+          <Control Icon={<AiOutlineArrowDown onClick={() => dropPlayer()} />} />
+          <Control
+            Icon={<AiOutlineArrowRight onClick={() => movePlayer(1)} />}
+          />
+          <Control
+            Icon={<FiRotateCcw onClick={() => playerRotate(stage, 1)} />}
+          />
+          <Control Icon={<BiArrowToBottom onClick={() => hardDrop()} />} />
+        </div>
       </StyledTetris>
     </StyledTetrisWrapper>
   );

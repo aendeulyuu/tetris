@@ -13,4 +13,10 @@ export const StyledDisplay = styled.div`
   color: ${props => (props.gameOver ? 'red' : '#999')};
   background: #000;
   font-size: 0.8rem;
+
+  @media only screen and (max-width: 768px) {
+    font-size: 0.5rem;
+    margin: 10px;
+    width: initial;
+  }
 `;

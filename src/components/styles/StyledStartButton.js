@@ -11,4 +11,8 @@ export const StyledStartButton = styled.button`
   color: white;
   background: #333;
   font-size: 1rem;
+
+  @media only screen and (max-width: 768px) {
+    font-size: 0.5rem;
+  }
 `;
